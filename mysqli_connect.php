@@ -1,4 +1,4 @@
-<?php # Script 9.2 - mysqli_connect.php 2
+<?php # Script 9.2 - mysqli_connect.php
 // This file contains the database access information.
 // This file also establishes a connection to MySQL,
 // selects the database, and sets the encoding.
@@ -15,19 +15,8 @@ $dbc = mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die ('Could no
 // Set the encoding...
 mysqli_set_charset($dbc, 'utf8');
 
-
-/*
-$servername = "localhost"; // no port number!!;
-$username = "admin";
-$password = "Admin123!";
-$dbname = "DWD272db1";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-*/
+// TEMP extra, not in the book:
+if($dbc)
+{
+    echo 'Connected successfully.';
+}
