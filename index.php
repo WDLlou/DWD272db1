@@ -7,12 +7,19 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>PHP with MySQL</title>
-    </head>
-    <body>
-        <h1>How PHP Works with MySQL?</h1>
-        <?php
-        // put your code here
-        ?>
-    </body>
+        <title>PHP with MySQL :: Connecting MySQL Server - Generic</title>
+   </head>
+   <body>
+      <?php
+         $dbhost = 'localhost:3306';
+         $dbuser = 'admin';
+         $dbpass = 'Admin123!';
+         $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+         if(! $conn ) {
+            die('Could not connect: ' . mysql_error());
+         }
+         echo 'Connected successfully';
+         mysql_close($conn);
+      ?>
+   </body>
 </html>
